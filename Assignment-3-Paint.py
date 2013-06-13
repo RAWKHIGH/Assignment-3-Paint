@@ -40,10 +40,21 @@ pen_tool_image.set_colorkey(white)
 straight_line_image = pygame.image.load("line.png").convert()
 straight_line_image.set_colorkey(white)
 
+# Rectangle Image
+rectangle_image = pygame.image.load("rectangle.png").convert()
+rectangle_image.set_colorkey(white)
 
+# Fill Image
+fill_image = pygame.image.load("fill.png").convert()
+fill_image.set_colorkey(white)
 
+# Save Image
+save_image = pygame.image.load("save.png").convert()
+save_image.set_colorkey(white)
 
-
+# Load Image
+load_image = pygame.image.load("load.png").convert()
+load_image.set_colorkey(white)
 
 # -------- Main Program Loop -----------
 while done == False:
@@ -61,20 +72,51 @@ while done == False:
 	# Putting Background Image On Screen
 	screen.blit(background_image, [0,0])
 	
+	# Putting Drawing Canvas On Screen
+	drawing_rect = pygame.Surface((600,600))    # the size of the rect
+	drawing_rect.fill(white)            		# this fills the entire surface
+	screen.blit(drawing_rect, (60,0))		    # draw the drawking screen rectangle
+	
 	# Putting Pen Tool Image
-	screen.blit(pen_tool_image, [0,0])	# 
-	pen_rect = pygame.Surface((60,60))  # the size of your rect
-	pen_rect.set_alpha(0)               # alpha level
-	screen.blit(pen_rect, (0,0))
+	screen.blit(pen_tool_image, [0,0])			# image
+	pen_rect = pygame.Surface((60,60))  		# the size of the rect
+	pen_rect.set_alpha(0)               		# alpha level
+	screen.blit(pen_rect, (0,0))				# draw invisible rectangle
 	
 	# Putting Straight line Image
-	screen.blit(straight_line_image, [0,61])	#
-	line_rect = pygame.Surface((60,60))  # the size of your rect
-	line_rect.set_alpha(0)               # alpha level
-	screen.blit(line_rect, (0,61))
+	screen.blit(straight_line_image, [0,61])	# image
+	line_rect = pygame.Surface((60,60))  		# the size of the rect
+	line_rect.set_alpha(0)               		# alpha level
+	screen.blit(line_rect, (0,61))				# draw invisible rectangle
 	
+	# Putting Straight line Image
+	screen.blit(rectangle_image, [0,122])		# image
+	rectangle_rect = pygame.Surface((60,60))  	# the size of the rect
+	rectangle_rect.set_alpha(0)               	# alpha level
+	screen.blit(rectangle_rect, (0,122))		# draw invisible rectangle
 	
+	# Putting Fill Image
+	screen.blit(fill_image, [0,183])			# image
+	fill_rect = pygame.Surface((60,60))  		# the size of the rect
+	fill_rect.set_alpha(0)               		# alpha level
+	screen.blit(fill_rect, (0,183))				# draw invisible rectangle
 	
+	# Putting Fill Colour Image
+	fill_colour_rect = pygame.Surface((15,15))  # the size of the rect
+	fill_colour_rect.fill(red)            		# this fills the entire surface
+	screen.blit(fill_colour_rect, (44,227))		# draw colour rectangle
+	
+	# Putting Save Image
+	screen.blit(save_image, [0,549])			# image
+	save_rect = pygame.Surface((30,60))  		# the size of the rect
+	save_rect.set_alpha(0)               		# alpha level
+	screen.blit(save_rect, (0,183))				# draw invisible rectangle
+	
+	# Putting Load Image
+	screen.blit(load_image, [31,549])			# image
+	load_rect = pygame.Surface((30,60))  		# the size of the rect
+	load_rect.set_alpha(0)               		# alpha level
+	screen.blit(load_rect, (0,183))				# draw invisible rectangle
 	
     pygame.display.flip()
  
