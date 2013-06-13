@@ -56,11 +56,22 @@ save_image.set_colorkey(white)
 load_image = pygame.image.load("load.png").convert()
 load_image.set_colorkey(white)
 
+# Eraser Image
+eraser_image = pygame.image.load("eraser.png").convert()
+eraser_image.set_colorkey(white)
+
+
+
+
+
+
+
 # -------- Main Program Loop -----------
 while done == False:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: # If user clicked close
-            done = True			
+            done = True
+			
 
 	# Tracking mouse position and comparing it to where i want buttons
 	if event.type == pygame.MOUSEBUTTONDOWN:
@@ -89,22 +100,22 @@ while done == False:
 	line_rect.set_alpha(0)               		# alpha level
 	screen.blit(line_rect, (0,61))				# draw invisible rectangle
 	
-	# Putting Straight line Image
+	# Putting Rectangle Image
 	screen.blit(rectangle_image, [0,122])		# image
 	rectangle_rect = pygame.Surface((60,60))  	# the size of the rect
 	rectangle_rect.set_alpha(0)               	# alpha level
 	screen.blit(rectangle_rect, (0,122))		# draw invisible rectangle
 	
 	# Putting Fill Image
-	screen.blit(fill_image, [0,183])			# image
+	screen.blit(fill_image, [0,427])			# image
 	fill_rect = pygame.Surface((60,60))  		# the size of the rect
 	fill_rect.set_alpha(0)               		# alpha level
-	screen.blit(fill_rect, (0,183))				# draw invisible rectangle
+	screen.blit(fill_rect, (0,427))				# draw invisible rectangle
 	
 	# Putting Fill Colour Image
 	fill_colour_rect = pygame.Surface((15,15))  # the size of the rect
 	fill_colour_rect.fill(red)            		# this fills the entire surface
-	screen.blit(fill_colour_rect, (44,227))		# draw colour rectangle
+	screen.blit(fill_colour_rect, (44,472))		# draw colour rectangle
 	
 	# Putting Save Image
 	screen.blit(save_image, [0,549])			# image
@@ -117,6 +128,17 @@ while done == False:
 	load_rect = pygame.Surface((30,60))  		# the size of the rect
 	load_rect.set_alpha(0)               		# alpha level
 	screen.blit(load_rect, (0,183))				# draw invisible rectangle
+	
+	# Putting eraser Image
+	screen.blit(eraser_image, [0,244])			# image
+	eraser_rect = pygame.Surface((60,60))  		# the size of the rect
+	eraser_rect.set_alpha(0)               		# alpha level
+	screen.blit(eraser_rect, (0,244))			# draw invisible rectangle
+	
+	
+	
+	
+	
 	
     pygame.display.flip()
  
